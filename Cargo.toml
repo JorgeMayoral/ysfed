@@ -1,7 +1,19 @@
 [package]
 name = "ysfed"
 version = "0.1.0"
+description = "Simple tool for encrypting and decrypting files using a password."
+license = "MIT OR Apache-2.0"
+authors = ["Jorge Mayoral Álvarez <jorge.ma@yorch.dev>"]
+repository = "https://github.com/JorgeMayoral/ysfed"
+readme = "README.md"
+homepage = "https://github.com/JorgeMayoral/ysfed"
+keywords = ["encryption", "decryption", "password", "cli", "cryptography"]
+categories = ["cryptography", "command-line-utilities"]
 edition = "2021"
+
+[[bin]]
+name = "ysfed"
+path = "src/main.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
