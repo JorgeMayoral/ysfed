@@ -1,1 +1,1 @@
-# Rust's Simple File Encryption/Decryption (RSFED)
+# Yorch's Simple File Encryption/Decryption (YSFED)
