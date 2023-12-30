@@ -1,0 +1,15 @@
+{
+  "components": {
+    "artifacts": {
+      "package_managers": {
+        "preferred": {
+          "cargo": "cargo install ysfed"
+        }
+      },
+      "cargo_dist": true
+    }
+  },
+  "build": {
+    "path_prefix": "ysfed"
+  }
+}
