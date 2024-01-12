@@ -10,6 +10,13 @@ Simple tool for protecting files with a password.
 ![Continuous integration](https://github.com/JorgeMayoral/ysfed/workflows/Continuous%20integration/badge.svg)
 [![](https://img.shields.io/crates/v/ripnode.svg)](https://crates.io/crates/ysfed)
 
+> [!CAUTION]
+> This is a toy project, do not use it for anything serious, it is not secure. 
+
+> [!WARNING]
+> TWork in progress, API may change. 
+
+
 <div class="oranda-hide">
 
 ## Installation
