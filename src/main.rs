@@ -1,63 +1,58 @@
+use std::fs;
+
 use clap::{Parser, Subcommand};
-use ysfed::{decrypt, encrypt};
+use ybf::Ybf;
 
 #[derive(Parser)]
 #[command(author, version, about)]
 struct Cli {
     #[command(subcommand)]
     command: Commands,
-    /// Path to the file to encrypt/decrypt
-    #[arg(short, long)]
-    file: String,
-    /// Password used to encrypt/decrypt the file
-    #[arg(short, long)]
-    password: String,
 }
 
 #[derive(Subcommand)]
 enum Commands {
     /// Encrypt the given file
     Encrypt {
+        /// Path to the file to encrypt/decrypt
+        #[arg(short, long)]
+        file: String,
         /// Path to the output file
-        #[arg(short, long, default_value = "output.lock")]
+        #[arg(short, long, default_value = "output.ybf")]
         output: Option<String>,
     },
     /// Decrypt the given file
     Decrypt {
+        /// Path to the file to encrypt/decrypt
+        #[arg(short, long)]
+        file: String,
         /// Path to the output file
-        #[arg(short, long, default_value = "output.unlock")]
+        #[arg(short, long, default_value = "output")]
         output: Option<String>,
     },
 }
 
 fn main() {
     let cli = Cli::parse();
-    let Cli {
-        command,
-        password,
-        file,
-    } = cli;
-
-    let password = password.as_bytes();
+    let Cli { command } = cli;
 
     match command {
-        Commands::Encrypt { output } => {
-            let input_path = std::path::Path::new(&file);
+        Commands::Encrypt { file, output } => {
+            let password = rpassword::prompt_password("Enter password: ").unwrap();
+            let input_data = fs::read_to_string::<&str>(&file).unwrap();
             let output_filename = &output.unwrap();
             let output_path = std::path::Path::new(output_filename);
-            encrypt::encrypt_file(password, input_path, output_path).unwrap_or_else(|e| {
-                println!("{}", e);
-                std::process::exit(1);
-            });
+            let ybf_file = Ybf::create_protected(&password, input_data.as_bytes().to_vec());
+            ybf::write_file(&ybf_file, output_path.into()).unwrap();
         }
-        Commands::Decrypt { output } => {
-            let input_path = std::path::Path::new(&file);
+        Commands::Decrypt { file, output } => {
+            let password = rpassword::prompt_password("Enter password: ").unwrap();
+            let ybf_file = ybf::read_file(file.into(), Some(&password));
+            let data = ybf_file.unwrap().decrypt_data(&password);
+            let data_string = String::from_utf8(data).unwrap();
             let output_filename = &output.unwrap();
             let output_path = std::path::Path::new(output_filename);
-            decrypt::decrypt_file(password, input_path, output_path).unwrap_or_else(|e| {
-                println!("{}", e);
-                std::process::exit(1);
-            });
+            fs::write(output_path, data_string).unwrap();
         }
     }
 }
