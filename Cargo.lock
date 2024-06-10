@@ -183,9 +183,9 @@ checksum = "98cc8fbded0c607b7ba9dd60cd98df59af97e84d24e49c8557331cfc26d301ce"
 
 [[package]]
 name = "cocoon"
-version = "0.4.1"
+version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c8fdcefc7ed908c1b277e3da074d76b492b325a7ae8bf41c4bf8892584d24364"
+checksum = "f2a01dfffcad6836c27272d11796c797b4018076284b6fa12dc7e103bf659cf0"
 dependencies = [
  "aes-gcm",
  "chacha20poly1305",
