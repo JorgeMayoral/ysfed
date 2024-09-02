@@ -10,14 +10,14 @@ Simple tool for protecting files with a password.
 ![Continuous integration](https://github.com/JorgeMayoral/ysfed/workflows/Continuous%20integration/badge.svg)
 [![](https://img.shields.io/crates/v/ripnode.svg)](https://crates.io/crates/ysfed)
 
+<div class="oranda-hide">
+
 > [!CAUTION]
-> This is a toy project, do not use it for anything serious, it is not secure. 
+> This is a toy project, do not use it for anything serious, it is not secure.
 
 > [!WARNING]
-> Work in progress, API may change. 
+> Work in progress, API may change.
 
-
-<div class="oranda-hide">
 
 ## Installation
 
@@ -46,8 +46,7 @@ ysfed --file <FILE> --password <PASSWORD> <encrypt|decrypt>
 
 ```sh
   -f, --file       File to encrypt/decrypt
-  -p, --password   Password to encrypt/decrypt
-  -o, --output     Output file
+  -o, --output     Output file [default: output]
   -h, --help       Print help
   -V, --version    Print version
 ```
