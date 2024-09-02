@@ -71,11 +71,9 @@ impl Ybf {
         let ciphertext = &data[34..];
         let key = Self::generate_key_from_password(password.as_bytes(), salt);
         let cipher = Aes256Gcm::new(Key::<Aes256Gcm>::from_slice(&key));
-        let plaintext = cipher
+        cipher
             .decrypt(nonce, ciphertext)
-            .expect("decryption failure!");
-
-        plaintext
+            .expect("decryption failure!")
     }
 
     pub fn decrypt_data(&self, password: &str) -> Result<String> {
