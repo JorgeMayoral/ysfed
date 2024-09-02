@@ -42,17 +42,16 @@ fn main() {
             let input_data = fs::read_to_string::<&str>(&file).unwrap();
             let output_filename = &output.unwrap();
             let output_path = std::path::Path::new(output_filename);
-            let ybf_file = Ybf::create_protected(&password, input_data.as_bytes().to_vec());
-            ybf::write_file(&ybf_file, output_path.into()).unwrap();
+            let ybf_file = Ybf::create(&password, input_data.as_bytes().to_vec());
+            ybf_file.write_file(output_path.into()).unwrap();
         }
         Commands::Decrypt { file, output } => {
             let password = rpassword::prompt_password("Enter password: ").unwrap();
-            let ybf_file = ybf::read_file(file.into(), Some(&password));
-            let data = ybf_file.unwrap().decrypt_data(&password);
-            let data_string = String::from_utf8(data).unwrap();
+            let ybf = Ybf::from_file(file.into()).unwrap();
+            let data = ybf.decrypt_data(&password).unwrap();
             let output_filename = &output.unwrap();
             let output_path = std::path::Path::new(output_filename);
-            fs::write(output_path, data_string).unwrap();
+            fs::write(output_path, data.as_bytes()).unwrap();
         }
     }
 }
