@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>ysfed Changelog</title><link>http://127.0.0.1:7979/ysfed/changelog</link><description>Changelog information for ysfed</description><category domain="https://github.com/JorgeMayoral/ysfed">ysfed Changelog</category><atom:link href="http://127.0.0.1:7979/ysfed/changelog.rss" rel="self"/><item><title>0.1.2 - 2024-01-12</title><link>http://127.0.0.1:7979/ysfed/changelog/v0.1.2</link><category domain="https://github.com/JorgeMayoral/ysfed">ysfed Changelog</category><guid>http://127.0.0.1:7979/ysfed/changelog/v0.1.2</guid><content:encoded><![CDATA[<h3>Features</h3>
+<ul>
+<li>:sparkles: add encrypt/decrypt functions</li>
+<li>:sparkles: rewrite using ybf</li>
+</ul>
+<h3>Miscellaneous Tasks</h3>
+<ul>
+<li>:see_no_evil: update gitignore</li>
+</ul>
+
+]]></content:encoded></item><item><title>0.1.1 - 2023-12-30</title><link>http://127.0.0.1:7979/ysfed/changelog/v0.1.1</link><category domain="https://github.com/JorgeMayoral/ysfed">ysfed Changelog</category><guid>http://127.0.0.1:7979/ysfed/changelog/v0.1.1</guid><content:encoded><![CDATA[<h3>Features</h3>
+<ul>
+<li>:sparkles: add basic functionality</li>
+</ul>
+<h3>Miscellaneous Tasks</h3>
+<ul>
+<li>👷 add release workflow</li>
+<li>👷 add web workflow</li>
+<li>👷 upgrade cargo-dit version</li>
+<li>💚 fix release workflow</li>
+</ul>
+
+]]></content:encoded></item><item><title>v0.1.0</title><link>http://127.0.0.1:7979/ysfed/changelog/v0.1.0</link><category domain="https://github.com/JorgeMayoral/ysfed">ysfed Changelog</category><guid>http://127.0.0.1:7979/ysfed/changelog/v0.1.0</guid><content:encoded><![CDATA[]]></content:encoded></item></channel></rss>
