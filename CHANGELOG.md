@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.1.3] - 2024-09-02
+## [0.2.0] - 2024-09-03
 
 ### Bug Fixes
 
