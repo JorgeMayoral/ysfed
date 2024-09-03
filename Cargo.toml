@@ -1,6 +1,6 @@
 [package]
 name = "ysfed"
-version = "0.1.2"
+version = "0.2.0"
 description = "Simple tool for encrypting and decrypting files using a password."
 license = "MIT OR Apache-2.0"
 authors = ["Jorge Mayoral Álvarez <jorge.ma@yorch.dev>"]
