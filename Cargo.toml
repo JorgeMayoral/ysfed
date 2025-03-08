@@ -24,7 +24,7 @@ path = "src/main.rs"
 [dependencies]
 aes = "0.8.4"
 aes-gcm = "0.10.3"
-anyhow = "1.0.95"
+anyhow = "1.0.97"
 argon2 = "0.5.3"
 bincode = "2.0.0"
 clap = { version = "4.5.29", features = ["derive"] }
